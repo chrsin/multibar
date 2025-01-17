@@ -21,8 +21,8 @@ fn build_bar(app: &Application) {
         .title("multibar")
         .build();
 
-    let monitors = window.display().monitors();
-
+    let display = <ApplicationWindow as WidgetExt>::display(&window);
+    let monitors = display.monitors();
 
     window.set_decorated(false);
     window.present();
